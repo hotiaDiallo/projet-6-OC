@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bindings xmlns="http://java.sun.com/xml/ns/jaxb" if-exists="true" version="2.1">
+  <!--
+
+Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+Généré le : 2020.03.14 à 05:53:31 PM CET 
+
+  -->
+  <bindings xmlns:tns="http://library/soap/web-services" if-exists="true" scd="x-schema::tns">
+    <schemaBindings map="false">
+      <package name="com.ib.generated"/>
+    </schemaBindings>
+    <bindings if-exists="true" scd="tns:GetUserLoginRequest">
+      <class ref="com.ib.generated.GetUserLoginRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:GetUserLoginResponse">
+      <class ref="com.ib.generated.GetUserLoginResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getUserByIdRequest">
+      <class ref="com.ib.generated.GetUserByIdRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getUserByIdResponse">
+      <class ref="com.ib.generated.GetUserByIdResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:userWS">
+      <class ref="com.ib.generated.UserWS"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getUserByEmailRequest">
+      <class ref="com.ib.generated.GetUserByEmailRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getUserByEmailResponse">
+      <class ref="com.ib.generated.GetUserByEmailResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getAuthorByIdRequest">
+      <class ref="com.ib.generated.GetAuthorByIdRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getAuthorByIdResponse">
+      <class ref="com.ib.generated.GetAuthorByIdResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:authorWS">
+      <class ref="com.ib.generated.AuthorWS"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getBookByIdRequest">
+      <class ref="com.ib.generated.GetBookByIdRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getBookByIdResponse">
+      <class ref="com.ib.generated.GetBookByIdResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:bookWS">
+      <class ref="com.ib.generated.BookWS"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getWorkByIdRequest">
+      <class ref="com.ib.generated.GetWorkByIdRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getWorkByIdResponse">
+      <class ref="com.ib.generated.GetWorkByIdResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:workWS">
+      <class ref="com.ib.generated.WorkWS"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getWorkByTitleRequest">
+      <class ref="com.ib.generated.GetWorkByTitleRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getWorkByTitleResponse">
+      <class ref="com.ib.generated.GetWorkByTitleResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getWorkByAuthorRequest">
+      <class ref="com.ib.generated.GetWorkByAuthorRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getWorkByAuthorResponse">
+      <class ref="com.ib.generated.GetWorkByAuthorResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getAvailableBookSizeRequest">
+      <class ref="com.ib.generated.GetAvailableBookSizeRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getAvailableBookSizeResponse">
+      <class ref="com.ib.generated.GetAvailableBookSizeResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getWorkByAuthorNameRequest">
+      <class ref="com.ib.generated.GetWorkByAuthorNameRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getWorkByAuthorNameResponse">
+      <class ref="com.ib.generated.GetWorkByAuthorNameResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getWorkByReleaseDateRequest">
+      <class ref="com.ib.generated.GetWorkByReleaseDateRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getWorkByReleaseDateResponse">
+      <class ref="com.ib.generated.GetWorkByReleaseDateResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getWorkByAuthorAndReleaseDateRequest">
+      <class ref="com.ib.generated.GetWorkByAuthorAndReleaseDateRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getWorkByAuthorAndReleaseDateResponse">
+      <class ref="com.ib.generated.GetWorkByAuthorAndReleaseDateResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getAllWorksRequest">
+      <class ref="com.ib.generated.GetAllWorksRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getAllWorksResponse">
+      <class ref="com.ib.generated.GetAllWorksResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getLoanByIdRequest">
+      <class ref="com.ib.generated.GetLoanByIdRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getLoanByIdResponse">
+      <class ref="com.ib.generated.GetLoanByIdResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:loanWS">
+      <class ref="com.ib.generated.LoanWS"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getCreateLoanRequest">
+      <class ref="com.ib.generated.GetCreateLoanRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getCreateLoanResponse">
+      <class ref="com.ib.generated.GetCreateLoanResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getExtendLoanRequest">
+      <class ref="com.ib.generated.GetExtendLoanRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getExtendLoanResponse">
+      <class ref="com.ib.generated.GetExtendLoanResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getReturnLoanRequest">
+      <class ref="com.ib.generated.GetReturnLoanRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getReturnLoanResponse">
+      <class ref="com.ib.generated.GetReturnLoanResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getLoansRequest">
+      <class ref="com.ib.generated.GetLoansRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getLoansResponse">
+      <class ref="com.ib.generated.GetLoansResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getLateLoansRequest">
+      <class ref="com.ib.generated.GetLateLoansRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getLateLoansResponse">
+      <class ref="com.ib.generated.GetLateLoansResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getLoanByUserRequest">
+      <class ref="com.ib.generated.GetLoanByUserRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:getLoanByUserResponse">
+      <class ref="com.ib.generated.GetLoanByUserResponse"/>
+    </bindings>
+  </bindings>
+</bindings>

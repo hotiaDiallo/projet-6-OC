@@ -1,0 +1,400 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:tns="http://library/soap/web-services"
+  targetNamespace="http://library/soap/web-services"
+  elementFormDefault="qualified">
+
+  <!--============== User ===================-->
+  <xs:complexType name="userWS">
+    <xs:sequence>
+      <xs:element name="id" type="xs:int"/>
+      <xs:element name="firstName" type="xs:string"/>
+      <xs:element name="lastName" type="xs:string"/>
+      <xs:element name="email" type="xs:string"/>
+      <xs:element name="password" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!--============== Author ===================-->
+  <xs:complexType name="authorWS">
+    <xs:sequence>
+      <xs:element name="id" type="xs:int"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="firstName" type="xs:string"/>
+      <xs:element name="lastName" type="xs:string"/>
+      <xs:element name="work" type="tns:workWS"/>
+ </xs:sequence>
+</xs:complexType>
+
+<!--============== Book ===================-->
+  <xs:complexType name="bookWS">
+    <xs:sequence>
+      <xs:element name="id" type="xs:int"/>
+      <xs:element name="esbn" type="xs:string"/>
+      <xs:element name="bookStatus" type="xs:boolean"/>
+      <xs:element name="work" type="tns:workWS"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!--============== Work ===================-->
+  <xs:complexType name="workWS">
+    <xs:sequence>
+      <xs:element name="id" type="xs:int"/>
+      <xs:element name="title" type="xs:string"/>
+      <xs:element name="summary" type="xs:string"/>
+      <xs:element name="releaseDate" type="xs:date"/>
+      <xs:element name="books" type="tns:bookWS"/>
+      <xs:element name="author" type="tns:authorWS"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!--============== Loan ===================-->
+  <xs:complexType name="loanWS">
+    <xs:sequence>
+      <xs:element name="id" type="xs:int"/>
+      <xs:element name="user" type="tns:userWS"/>
+      <xs:element name="book" type="tns:bookWS"/>
+      <xs:element name="borrowingDate" type="xs:date"/>
+      <xs:element name="returnDate" type="xs:date"/>
+      <xs:element name="loanStatus" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <!-- ================= USER METHODS ============================ -->
+
+  <!--============== LOGIN ===================-->
+  <xs:element name="GetUserLoginRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="email" type="xs:string"/>
+        <xs:element name="password" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="GetUserLoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="response" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!--============== GET USER BY ID ===================-->
+  <xs:element name="getUserByIdRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="id" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="getUserByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="user" type="tns:userWS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!--============== GET USER BY EMAIL ===================-->
+  <xs:element name="getUserByEmailRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="email" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="getUserByEmailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="user" type="tns:userWS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!--============== GET AUTHOR BY ID ===================-->
+  <xs:element name="getAuthorByIdRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="id" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="getAuthorByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="author" type="tns:authorWS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!--============== GET LOAN BY ID =================== -->
+  <xs:element name="getBookByIdRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="id" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="getBookByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="book" type="tns:bookWS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!--============== GET WORK BY ID =================== -->
+  <xs:element name="getWorkByIdRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="id" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="getWorkByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="work" type="tns:workWS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!--============== GET WORK BY TITLE =================== -->
+  <xs:element name="getWorkByTitleRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="title" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="getWorkByTitleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="work" type="tns:workWS" maxOccurs="unbounded" nillable="true"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!--============== GET WORK BY AUTHOR ID=================== -->
+  <xs:element name="getWorkByAuthorRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="id" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="getWorkByAuthorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="work" type="tns:workWS" maxOccurs="unbounded" nillable="true"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!--============== GET NUMBER OF AVAILABLE BOOKS=================== -->
+  <xs:element name="getAvailableBookSizeRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="workId" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="getAvailableBookSizeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="size" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!--============== GET WORK BY AUTHOR NAME=================== -->
+  <xs:element name="getWorkByAuthorNameRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="name" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="getWorkByAuthorNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="work" type="tns:workWS" maxOccurs="unbounded" nillable="true"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- ============== GET WORK BY RELEASE DATE ===================-->
+  <xs:element name="getWorkByReleaseDateRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="releaseDate" type="xs:date"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="getWorkByReleaseDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="work" type="tns:workWS" maxOccurs="unbounded" nillable="true"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- ============== GET WORK BY AUTHOR ID AND RELEASE DATE ===================-->
+  <xs:element name="getWorkByAuthorAndReleaseDateRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="id" type="xs:int"/>
+        <xs:element name="releaseDate" type="xs:date"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="getWorkByAuthorAndReleaseDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="work" type="tns:workWS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!--
+    ============== GET ALL WORKS ===================
+    -->
+
+  <xs:element name="getAllWorksRequest">
+    <xs:complexType/>
+  </xs:element>
+
+  <xs:element name="getAllWorksResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="works" type="tns:workWS" maxOccurs="unbounded" nillable="true"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+
+  <!--============== GET LOAN BY ID =================== -->
+  <xs:element name="getLoanByIdRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="id" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="getLoanByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="loan" type="tns:loanWS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!--============== CREATE LOAN ===================-->
+  <xs:element name="getCreateLoanRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="workId" type="xs:int"/>
+        <xs:element name="userId" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="getCreateLoanResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="loan" type="tns:loanWS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!--============== EXTEND LOAN ===================-->
+  <xs:element name="getExtendLoanRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="loanId" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="getExtendLoanResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="loan" type="tns:loanWS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!--============== RETURN LOAN ===================-->
+  <xs:element name="getReturnLoanRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="loanId" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="getReturnLoanResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="loan" type="tns:loanWS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- ============== GET ALL LOANS ===================-->
+  <xs:element name="getLoansRequest">
+    <xs:complexType/>
+  </xs:element>
+
+  <xs:element name="getLoansResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="loans" type="tns:loanWS" maxOccurs="unbounded" nillable="true"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- ============== GET ALL LATE LOANS ===================-->
+  <xs:element name="getLateLoansRequest">
+    <xs:complexType/>
+  </xs:element>
+
+  <xs:element name="getLateLoansResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="loans" type="tns:loanWS" maxOccurs="unbounded" nillable="true"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- ============== GET Loan BY USER ===================-->
+  <xs:element name="getLoanByUserRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="userId" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="getLoanByUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="loan" type="tns:loanWS" maxOccurs="unbounded" nillable="true"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindings version="2.1" xmlns="http://java.sun.com/xml/ns/jaxb">
+  <!--
+
+Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
+Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+Généré le : 2020.02.06 à 05:22:32 PM CET 
+
+  -->
+  <bindings scd="x-schema::tns" xmlns:tns="http://library/soap/web-services">
+    <schemaBindings map="false">
+      <package name="library.soap.web_services"/>
+    </schemaBindings>
+    <bindings scd="tns:GetUserLoginRequest">
+      <class ref="library.soap.web_services.GetUserLoginRequest"/>
+    </bindings>
+    <bindings scd="tns:GetUserLoginResponse">
+      <class ref="library.soap.web_services.GetUserLoginResponse"/>
+    </bindings>
+    <bindings scd="tns:getUserByIdRequest">
+      <class ref="library.soap.web_services.GetUserByIdRequest"/>
+    </bindings>
+    <bindings scd="tns:getUserByIdResponse">
+      <class ref="library.soap.web_services.GetUserByIdResponse"/>
+    </bindings>
+    <bindings scd="~tns:userWS">
+      <class ref="library.soap.web_services.UserWS"/>
+    </bindings>
+    <bindings scd="tns:getUserByEmailRequest">
+      <class ref="library.soap.web_services.GetUserByEmailRequest"/>
+    </bindings>
+    <bindings scd="tns:getUserByEmailResponse">
+      <class ref="library.soap.web_services.GetUserByEmailResponse"/>
+    </bindings>
+    <bindings scd="tns:getAuthorByIdRequest">
+      <class ref="library.soap.web_services.GetAuthorByIdRequest"/>
+    </bindings>
+    <bindings scd="tns:getAuthorByIdResponse">
+      <class ref="library.soap.web_services.GetAuthorByIdResponse"/>
+    </bindings>
+    <bindings scd="~tns:authorWS">
+      <class ref="library.soap.web_services.AuthorWS"/>
+    </bindings>
+    <bindings scd="tns:getBookByIdRequest">
+      <class ref="library.soap.web_services.GetBookByIdRequest"/>
+    </bindings>
+    <bindings scd="tns:getBookByIdResponse">
+      <class ref="library.soap.web_services.GetBookByIdResponse"/>
+    </bindings>
+    <bindings scd="~tns:bookWS">
+      <class ref="library.soap.web_services.BookWS"/>
+    </bindings>
+    <bindings scd="tns:getWorkByIdRequest">
+      <class ref="library.soap.web_services.GetWorkByIdRequest"/>
+    </bindings>
+    <bindings scd="tns:getWorkByIdResponse">
+      <class ref="library.soap.web_services.GetWorkByIdResponse"/>
+    </bindings>
+    <bindings scd="~tns:workWS">
+      <class ref="library.soap.web_services.WorkWS"/>
+    </bindings>
+    <bindings scd="tns:getWorkByTitleRequest">
+      <class ref="library.soap.web_services.GetWorkByTitleRequest"/>
+    </bindings>
+    <bindings scd="tns:getWorkByTitleResponse">
+      <class ref="library.soap.web_services.GetWorkByTitleResponse"/>
+    </bindings>
+    <bindings scd="tns:getWorkByAuthorRequest">
+      <class ref="library.soap.web_services.GetWorkByAuthorRequest"/>
+    </bindings>
+    <bindings scd="tns:getWorkByAuthorResponse">
+      <class ref="library.soap.web_services.GetWorkByAuthorResponse"/>
+    </bindings>
+    <bindings scd="tns:getWorkByAuthorNameRequest">
+      <class ref="library.soap.web_services.GetWorkByAuthorNameRequest"/>
+    </bindings>
+    <bindings scd="tns:getWorkByAuthorNameResponse">
+      <class ref="library.soap.web_services.GetWorkByAuthorNameResponse"/>
+    </bindings>
+    <bindings scd="tns:getWorkByReleaseDateRequest">
+      <class ref="library.soap.web_services.GetWorkByReleaseDateRequest"/>
+    </bindings>
+    <bindings scd="tns:getWorkByReleaseDateResponse">
+      <class ref="library.soap.web_services.GetWorkByReleaseDateResponse"/>
+    </bindings>
+    <bindings scd="tns:getWorkByAuthorAndReleaseDateRequest">
+      <class ref="library.soap.web_services.GetWorkByAuthorAndReleaseDateRequest"/>
+    </bindings>
+    <bindings scd="tns:getWorkByAuthorAndReleaseDateResponse">
+      <class ref="library.soap.web_services.GetWorkByAuthorAndReleaseDateResponse"/>
+    </bindings>
+    <bindings scd="tns:getLoanByIdRequest">
+      <class ref="library.soap.web_services.GetLoanByIdRequest"/>
+    </bindings>
+    <bindings scd="tns:getLoanByIdResponse">
+      <class ref="library.soap.web_services.GetLoanByIdResponse"/>
+    </bindings>
+    <bindings scd="~tns:loanWS">
+      <class ref="library.soap.web_services.LoanWS"/>
+    </bindings>
+    <bindings scd="tns:getCreateLoanRequest">
+      <class ref="library.soap.web_services.GetCreateLoanRequest"/>
+    </bindings>
+    <bindings scd="tns:getCreateLoanResponse">
+      <class ref="library.soap.web_services.GetCreateLoanResponse"/>
+    </bindings>
+    <bindings scd="tns:getExtendLoanRequest">
+      <class ref="library.soap.web_services.GetExtendLoanRequest"/>
+    </bindings>
+    <bindings scd="tns:getExtendLoanResponse">
+      <class ref="library.soap.web_services.GetExtendLoanResponse"/>
+    </bindings>
+    <bindings scd="tns:getReturnLoanRequest">
+      <class ref="library.soap.web_services.GetReturnLoanRequest"/>
+    </bindings>
+    <bindings scd="tns:getReturnLoanResponse">
+      <class ref="library.soap.web_services.GetReturnLoanResponse"/>
+    </bindings>
+    <bindings scd="tns:getLoansRequest">
+      <class ref="library.soap.web_services.GetLoansRequest"/>
+    </bindings>
+    <bindings scd="tns:getLoansResponse">
+      <class ref="library.soap.web_services.GetLoansResponse"/>
+    </bindings>
+    <bindings scd="tns:getLoanByUserRequest">
+      <class ref="library.soap.web_services.GetLoanByUserRequest"/>
+    </bindings>
+    <bindings scd="tns:getLoanByUserResponse">
+      <class ref="library.soap.web_services.GetLoanByUserResponse"/>
+    </bindings>
+  </bindings>
+</bindings>
+
