@@ -1,4 +1,7 @@
 package com.ib.library.repository;
 
-public interface ReservationInterface {
+import com.ib.library.model.Reservation;
+import org.springframework.data.repository.CrudRepository;
+
+public interface ReservationInterface extends CrudRepository<Integer, Reservation> {
 }
