@@ -6,6 +6,8 @@ INSERT INTO public.user (id, first_name, last_name, birth_date, local_adress, po
 
 INSERT INTO public.user (id, first_name, last_name, birth_date, local_adress, postal_code, city, email, password, phone_number) VALUES (3, 'Paul', 'Walker', null, null, null, null, "paul.walker@gmail.com", "1234", null);
 
+ALTER SEQUENCE user_id_seq RESTART WITH 4;
+
 -- ================================== author =================================== --
 INSERT INTO public.author (id, first_name, last_name, full_name) VALUES (1, 'Paulo', 'Coelho', 'Paulo Coelho');
 INSERT INTO public.author (id, first_name, last_name, full_name) VALUES (2, 'J. R. R.', 'Tolkien', 'J. R. R Tolkien');
@@ -14,10 +16,7 @@ INSERT INTO public.author (id, first_name, last_name, full_name) VALUES (4, 'Ste
 INSERT INTO public.author (id, first_name, last_name, full_name) VALUES (5, 'Henri', 'Troyat', 'Henri Troyat');
 INSERT INTO public.author (id, first_name, last_name, full_name) VALUES (6, 'Henri', 'Gougaud', 'Henri Gougaud');
 
--- ==================================  library =================================== --
-
-INSERT INTO public.library (id, name) VALUES (1, "library1");
-INSERT INTO public.library (id, name) VALUES (2, "library2");
+ALTER SEQUENCE author_id_seq RESTART WITH 7;
 
 -- ================================== work =================================== --
 INSERT INTO public.work (id, author_id, library_id, title, summary, release_date)
@@ -49,6 +48,7 @@ INSERT INTO public.work (id, author_id, library_id, title, summary, release_date
 VALUES (9, 2, 2, 'Le Seigneur des Anneaux, Tome 3 : Le Retour du Roi', 'Avec "Le Retour du Roi" s''achèvent dans un fracas d''apocalypse les derniers combats de la guerre de l''Anneau.
 Tandis que le continent se couvre de ténèbres, annonçant pour le peuple des Hobbits l''aube d''une ère nouvelle, Frodon poursuit son entreprise. Alors qu''il n''a pu franchir la Porte Noire, il se demande comment atteindre le Mont du Destin. Peut-être est-il trop tard : le Seigneur des Ténèbres mobilise ses troupes.', '2017-12-27');
 
+ALTER SEQUENCE work_id_seq RESTART WITH 10;
 -- ==================================  book =================================== --
 
 INSERT INTO public.book (id, isbn, book_status) VALUES (1, '2290148172', true);
@@ -91,6 +91,8 @@ INSERT INTO public.book (id, isbn, book_status) VALUES (19, '2290157796', true);
 
 INSERT INTO public.book (id, isbn, book_status) VALUES (20, '2290157436', true);
 
+ALTER SEQUENCE book_id_seq RESTART WITH 21;
+
 
 -- ==================================  work-book =================================== --
 
@@ -128,3 +130,16 @@ INSERT INTO public.work_books (work_id, books_id) VALUES (8,20);
 INSERT INTO public.loan (id, user_id, book_id, borrowing_date, returning_date, public._status) VALUES (1, 1, 2, '2019-12-27', '2020-03-21', "activated");
 
 INSERT INTO public.loan (id, user_id, book_id, borrowing_date, returning_date, loan_status) VALUES (2, 2, 2, '2017-12-27', '2020-03-25', "activated");
+
+ALTER SEQUENCE loan_id_seq RESTART WITH 3;
+
+INSERT INTO public.reservation (id, user_id, work_id, reservation_date, notification_date) VALUES (1, 6, 1, '2018-05-22 18:11:43', null);
+	INSERT INTO public.reservation (id, user_id, work_id, reservation_date, notification_date) VALUES (2, 12, 1, '2018-05-21 18:11:43', null);
+	INSERT INTO public.reservation (id, user_id, work_id, reservation_date, notification_date) VALUES (3, 9, 5, '2018-05-22 18:11:43', null);
+	INSERT INTO public.reservation (id, user_id, work_id, reservation_date, notification_date) VALUES (4, 6, 5, '2018-05-21 18:11:43', null);
+	INSERT INTO public.reservation (id, user_id, work_id, reservation_date, notification_date) VALUES (5, 11, 3, '2018-05-22 18:11:43', null);
+	INSERT INTO public.reservation (id, user_id, work_id, reservation_date, notification_date) VALUES (6, 9, 3, '2018-05-21 18:11:43', null);
+	INSERT INTO public.reservation (id, user_id, work_id, reservation_date, notification_date) VALUES (7, 12, 6, '2018-05-22 18:11:43', null);
+	INSERT INTO public.reservation (id, user_id, work_id, reservation_date, notification_date) VALUES (8, 11, 6, '2018-05-21 18:11:43', null);
+
+	ALTER SEQUENCE reservation_id_seq RESTART WITH 9;
