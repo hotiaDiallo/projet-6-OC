@@ -16,17 +16,17 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "work")
 public class Work implements Serializable {
-  @Id @GeneratedValue(generator="gen_work", strategy = GenerationType.IDENTITY)
-  @SequenceGenerator(name="gen_work", sequenceName="seq_work", allocationSize=1)
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
-  @ManyToOne(fetch = FetchType.EAGER)
+  @ManyToOne(fetch = FetchType.LAZY)
   private Author author;
   private String title;
   private String summary;
   private Date releaseDate;
-  @OneToMany(fetch = FetchType.EAGER)
+  @OneToMany(fetch = FetchType.LAZY)
   private List<Book> books;
-  @ManyToOne(fetch = FetchType.EAGER)
+  @ManyToOne(fetch = FetchType.LAZY)
   private Library library;
 
   public Work() {

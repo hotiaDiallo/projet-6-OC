@@ -16,8 +16,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "author")
 public class Author implements Serializable {
-  @Id @GeneratedValue(generator="gen_author", strategy = GenerationType.IDENTITY)
-  @SequenceGenerator(name="gen_author", sequenceName="seq_author", allocationSize=1)
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
   private String fullName;
 

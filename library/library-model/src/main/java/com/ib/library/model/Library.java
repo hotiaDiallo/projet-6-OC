@@ -16,8 +16,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name="library")
 public class Library {
-  @Id @GeneratedValue(generator="gen_library", strategy = GenerationType.IDENTITY)
-  @SequenceGenerator(name="gen_library", sequenceName="seq_library", allocationSize=1)
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
   private String name;
   @OneToMany(fetch = FetchType.EAGER)

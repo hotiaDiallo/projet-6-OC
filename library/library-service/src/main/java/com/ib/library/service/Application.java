@@ -22,7 +22,7 @@ import java.util.List;
 @ComponentScan(basePackages = {"com.ib.library.service", "com.ib.library.repository"})
 public class Application implements CommandLineRunner {
 
-  @Autowired
+  /*@Autowired
   private UserRepository userRepository;
   @Autowired
   private WorkRepository workRepository;
@@ -43,7 +43,7 @@ public class Application implements CommandLineRunner {
   private BookService bookService;
 
   @Autowired
-  private LibraryRepository libraryRepository;
+  private LibraryRepository libraryRepository;*/
 
   public static void main(String[] args) {
     SpringApplication.run(Application.class, args);
@@ -52,10 +52,6 @@ public class Application implements CommandLineRunner {
   @Override
   public void run(String... args) throws Exception {
 
-    System.out.println("##########################################################");
-    List<Loan> allLateLoans = this.loanService.findAllLateLoans();
-    allLateLoans.forEach(loan -> System.out.println(loan.getReturningDate()));
-    System.out.println("##########################################################");
 
   }
 }

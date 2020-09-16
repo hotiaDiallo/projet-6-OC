@@ -7,15 +7,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "user")
+@Table(name="\"User\"")
 public class User implements Serializable {
-  @Id @GeneratedValue(generator="gen_user", strategy = GenerationType.IDENTITY)
-  @SequenceGenerator(name="gen_user", sequenceName="seq_user", allocationSize=1)
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
   private String firstName;
   private String lastName;
@@ -60,7 +59,6 @@ public class User implements Serializable {
     this.email = email;
     this.password = password;
   }
-
 
 
   public Integer getId() {

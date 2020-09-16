@@ -1,4 +1,4 @@
-package com.ib.library.soap.endpoints;
+package com.ib.library.soap.endpointsoap;
 
 import com.ib.library.model.Book;
 import com.ib.library.service.abstraction.BookService;
@@ -16,20 +16,20 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 @Endpoint
 public class BookEndPoint {
 
-  @Autowired
-  BookService bookService;
+    @Autowired
+    BookService bookService;
 
-  @PayloadRoot(namespace = Utils.NAMESPACE_URI, localPart = "getBookByIdRequest")
-  @ResponsePayload
-  public GetBookByIdResponse getBookById(@RequestPayload GetBookByIdRequest request){
-    GetBookByIdResponse bookByIdResponse = new GetBookByIdResponse();
-    Book book = this.bookService.findBookById(request.getId());
-    BookWS bookWS = null;
-    if (book != null){
-      bookWS = new BookWS();
-      BeanUtils.copyProperties(book, bookWS);
+    @PayloadRoot(namespace = Utils.NAMESPACE_URI, localPart = "getBookByIdRequest")
+    @ResponsePayload
+    public GetBookByIdResponse getBookById(@RequestPayload GetBookByIdRequest request){
+        GetBookByIdResponse bookByIdResponse = new GetBookByIdResponse();
+        Book book = this.bookService.findBookById(request.getId());
+        BookWS bookWS = null;
+        if (book != null){
+            bookWS = new BookWS();
+            BeanUtils.copyProperties(book, bookWS);
+        }
+        bookByIdResponse.setBook(bookWS);
+        return bookByIdResponse;
     }
-    bookByIdResponse.setBook(bookWS);
-    return bookByIdResponse;
-  }
 }

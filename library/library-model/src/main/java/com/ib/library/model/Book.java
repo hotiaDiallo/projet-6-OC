@@ -12,8 +12,8 @@ import javax.persistence.Table;
 @Table(name="book")
 public class Book implements Serializable {
 
-  @Id @GeneratedValue(generator="gen_book", strategy = GenerationType.IDENTITY)
-  @SequenceGenerator(name="gen_book", sequenceName="seq_book", allocationSize=1)
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
   private String ISBN;
   private boolean bookStatus;

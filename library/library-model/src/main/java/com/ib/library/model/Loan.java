@@ -17,12 +17,12 @@ import javax.persistence.Table;
 @Table(name = "loan")
 public class Loan implements Serializable {
 
-  @Id @GeneratedValue(generator="gen_loan", strategy = GenerationType.IDENTITY)
-  @SequenceGenerator(name="gen_loan", sequenceName="seq_loan", allocationSize=1)
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
-  @ManyToOne(targetEntity = User.class, fetch = FetchType.EAGER)
+  @ManyToOne(targetEntity = User.class, fetch = FetchType.LAZY)
   private User user;
-  @OneToOne(targetEntity = Book.class, fetch = FetchType.EAGER)
+  @OneToOne(targetEntity = Book.class, fetch = FetchType.LAZY)
   private Book book;
   private Date borrowingDate;
   private Date returningDate;
